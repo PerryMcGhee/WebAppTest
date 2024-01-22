@@ -11,10 +11,18 @@ namespace FirstMVCApp.Controllers
             { Name = "Sif", Age = 2 };
             return View(doggo);
         }
+
         public IActionResult Create()
         {
-            return View();
+            var dogVm = new DogViewModel();
+            return View(dogVm);
         }
+
+        public IActionResult CreateDog(DogViewModel dogViewModel)
+        {
+            return View("Index");
+        }
+
         public IActionResult Hello()
         {
             DogViewModel doggo = new DogViewModel()
